@@ -23,6 +23,14 @@ export PATH=$PATH:$HOME/.cargo/bin
 # prompt config
 # https://spaceship-prompt.sh/
 SPACESHIP_USER_SHOW=true
+SPACESHIP_GIT_STATUS_UNTRACKED=" untracked "
+SPACESHIP_GIT_STATUS_MODIFIED=" modified "
+
+
+alias vim="lvim"
+alias r="ranger"
+export VISUAL=lvim;
+export EDITOR=lvim;
 
 
 #calculator
