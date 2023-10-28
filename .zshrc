@@ -54,6 +54,9 @@ bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
 
+
+#________________________________________________
+# plugin code
 # sudo will add before the command
 sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history
