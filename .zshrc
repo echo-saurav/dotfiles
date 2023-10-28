@@ -11,6 +11,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
 antigen bundle olets/zsh-abbr@main
+antigen bundle Aloxaf/fzf-tab
 
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
@@ -21,7 +22,7 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.docker/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
-
+zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
 SPACESHIP_USER_SHOW=true
@@ -31,6 +32,7 @@ SPACESHIP_GIT_STATUS_MODIFIED=" modified "
 
 alias vim="lvim"
 alias r="ranger"
+alias ls="ls --color"
 
 
 # abbr v="lvim"
