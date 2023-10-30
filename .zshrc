@@ -10,7 +10,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
-antigen bundle olets/zsh-abbr@main
 antigen bundle Aloxaf/fzf-tab
 
 antigen theme spaceship-prompt/spaceship-prompt
@@ -34,9 +33,6 @@ alias vim="lvim"
 alias r="ranger"
 alias ls="ls --color"
 
-
-# abbr v="lvim"
-# abbr r="ranger"
 
 export VISUAL=lvim;
 export EDITOR=lvim;
