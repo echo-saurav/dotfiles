@@ -30,8 +30,8 @@ zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
 SPACESHIP_USER_SHOW=true
-SPACESHIP_GIT_STATUS_UNTRACKED=" untracked "
-SPACESHIP_GIT_STATUS_MODIFIED=" modified "
+SPACESHIP_GIT_STATUS_UNTRACKED=
+SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
 alias vim="lvim"
