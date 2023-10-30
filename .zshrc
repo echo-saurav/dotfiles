@@ -3,7 +3,6 @@
 # install antigen plugin for zsh
 # https://github.com/zsh-users/antigen
 
-
 source ./antigen.zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -21,6 +20,11 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.docker/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+
 zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
@@ -37,7 +41,6 @@ alias ls="ls --color"
 export VISUAL=lvim;
 export EDITOR=lvim;
 
-
 #calculator
 function = () {
 	local IFS=' '
@@ -51,7 +54,7 @@ function = () {
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=false
-
+HISTFILE=$HOME/.zsh_history
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
@@ -74,3 +77,6 @@ sudo-command-line() {
 zle -N sudo-command-line
 # Defined shortcut keys: [Esc] [Esc]
 bindkey "\e\e" sudo-command-line
+
+
+
