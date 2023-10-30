@@ -28,7 +28,7 @@ export PATH=$PATH:/bin
 zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
-SPACESHIP_USER_SHOW=true
+SPACESHIP_USER_SHOW=false
 SPACESHIP_GIT_STATUS_UNTRACKED=
 SPACESHIP_GIT_STATUS_MODIFIED="m"
 
