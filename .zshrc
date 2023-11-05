@@ -3,14 +3,14 @@
 # install antigen plugin for zsh
 # https://github.com/zsh-users/antigen
 
-source ./antigen.zsh
+source ~/antigen.zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
 antigen bundle Aloxaf/fzf-tab
-
+# antigen bundle zsh-users/zsh-history-substring-search
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
@@ -32,7 +32,7 @@ SPACESHIP_USER_SHOW=false
 SPACESHIP_GIT_STATUS_UNTRACKED=
 SPACESHIP_GIT_STATUS_MODIFIED="m"
 
-
+alias rm="rm -i"
 alias vim="lvim"
 alias r="ranger"
 alias ls="ls --color"
@@ -56,10 +56,17 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=false
 HISTFILE=$HOME/.zsh_history
 
-bindkey "^[^[[D" backward-word
-bindkey "^[^[[C" forward-word
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
+# bindkey "^[^[[D" backward-word
+# bindkey "^[^[[C" forward-word
+# bindkey "^[a" beginning-of-line
+# bindkey "^[e" end-of-line
+
+# history search
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+
+# bindkey "$terminfo[kcuu1]" history-substring-search-up
+# bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
 
