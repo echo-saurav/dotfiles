@@ -14,6 +14,8 @@ vim.g.gruvbox_material_enable_italic = 1
 vim.g.airline_theme= 'gruvbox_material'
 
 lvim.builtin.bufferline.active = false
+lvim.builtin.project.manual_mode = true
+
 
 
 lvim.plugins = {
