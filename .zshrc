@@ -41,6 +41,8 @@ alias ls="ls --color"
 export VISUAL=lvim;
 export EDITOR=lvim;
 
+
+
 #calculator
 function = () {
 	local IFS=' '
@@ -56,10 +58,10 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=false
 HISTFILE=$HOME/.zsh_history
 
-# bindkey "^[^[[D" backward-word
-# bindkey "^[^[[C" forward-word
-# bindkey "^[a" beginning-of-line
-# bindkey "^[e" end-of-line
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 
 # history search
 #bindkey '^[[A' history-substring-search-up
