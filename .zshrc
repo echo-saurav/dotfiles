@@ -128,3 +128,7 @@ expand-alias-and-accept-line() {
 zle -N accept-line expand-alias-and-accept-line
 # ___________________________________________________________________
 
+
+
+
+
