@@ -13,7 +13,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
 antigen bundle Aloxaf/fzf-tab
-antigen bundle jeffreytse/zsh-vi-mode
+# antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle momo-lab/zsh-abbrev-alias
 antigen bundle MichaelAquilina/zsh-you-should-use
 # antigen bundle olets/zsh-abbr@main
