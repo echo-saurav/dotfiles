@@ -77,6 +77,9 @@ bindkey "^E" end-of-line
 # bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
 
 #________________________________________________
 # plugin code
