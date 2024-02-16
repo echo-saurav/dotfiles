@@ -35,6 +35,8 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
 
+# export PATH=$PATH:$HOME/miniconda/bin/
+
 zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
@@ -94,6 +96,9 @@ bindkey "^E" end-of-line
 # bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
 
 #________________________________________________
 # plugin code
@@ -122,4 +127,8 @@ abbrev-alias -g s="cd ~/storage/public/"
 # abbr -g hd="~/docker"
 # abbr -g hdd="~/docker/data/"
 # abbr -g hdc="~/docker/dockerCompose/"
+
+
+
+
 
