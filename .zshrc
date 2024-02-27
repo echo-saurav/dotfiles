@@ -3,6 +3,9 @@
 # install antigen plugin for zsh
 # https://github.com/zsh-users/antigen
 
+# antigen config
+ANTIGEN_LOG="~/.antigen.log"
+
 source ~/antigen.zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -10,9 +13,16 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
 antigen bundle Aloxaf/fzf-tab
+# antigen bundle jeffreytse/zsh-vi-mode
+antigen bundle momo-lab/zsh-abbrev-alias
+antigen bundle MichaelAquilina/zsh-you-should-use
+# antigen bundle olets/zsh-abbr@main
 # antigen bundle zsh-users/zsh-history-substring-search
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
+
+
+
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
@@ -34,10 +44,19 @@ SPACESHIP_USER_SHOW=false
 SPACESHIP_GIT_STATUS_UNTRACKED=
 SPACESHIP_GIT_STATUS_MODIFIED="m"
 
+
+
 alias rm="rm -i"
 alias vim="lvim"
 alias r="ranger"
 alias ls="ls --color"
+
+
+## dir and file alias
+# alias -g h="~/"
+# alias -g d="~/docker/data/"
+# alias -g dc="~/docker/dockerCompose/"
+# alias -g s="~/storage/public/"
 
 
 export VISUAL=lvim;
@@ -95,45 +114,19 @@ sudo-command-line() {
 }
 zle -N sudo-command-line
 # Defined shortcut keys: [Esc] [Esc]
-bindkey "\e\e" sudo-command-line
+bindkey "\e\e\e" sudo-command-line
 
 
-
-# ___________________________________________________________________
-# abbr
-## declare a list of expandable aliases to fill up later
-typeset -a ealiases
-ealiases=()
-
-# write a function for adding an alias to the list mentioned above
-function abbr() {
-    alias $1
-    ealiases+=(${1%%\=*})
-}
-
-# expand any aliases in the current line buffer
-function expand-ealias() {
-    if [[ $LBUFFER =~ "\<(${(j:|:)ealiases})\$" ]]; then
-        zle _expand_alias
-        zle expand-word
-    fi
-    zle magic-space
-}
-zle -N expand-ealias
-
-# Bind the space key to the expand-alias function above, so that space will expand any expandable aliases
-bindkey ' '        expand-ealias
-bindkey '^ '       magic-space     # control-space to bypass completion
-bindkey -M isearch " "      magic-space     # normal space during searches
-
-# A function for expanding any aliases before accepting the line as is and executing the entered command
-expand-alias-and-accept-line() {
-    expand-ealias
-    zle .backward-delete-char
-    zle .accept-line
-}
-zle -N accept-line expand-alias-and-accept-line
-# ___________________________________________________________________
+abbrev-alias -g com="cd ~/docker/dockerCompose/"
+abbrev-alias -g h="cd ~/"
+abbrev-alias -g s="cd ~/storage/public/"
+#
+## abbr 
+# abbr import-aliases 
+# abbr -g h="~/"
+# abbr -g hd="~/docker"
+# abbr -g hdd="~/docker/data/"
+# abbr -g hdc="~/docker/dockerCompose/"
 
 
 
