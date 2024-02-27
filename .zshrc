@@ -98,6 +98,7 @@ zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line
 
 
+
 # ___________________________________________________________________
 # abbr
 ## declare a list of expandable aliases to fill up later
