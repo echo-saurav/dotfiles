@@ -48,7 +48,7 @@ SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 alias rm="rm -i"
 alias vim="lvim"
-alias r="ranger"
+alias r=". ranger"
 alias ls="ls --color"
 
 
