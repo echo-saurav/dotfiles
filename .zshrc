@@ -4,7 +4,7 @@
 # https://github.com/zsh-users/antigen
 
 # antigen config
-ANTIGEN_LOG="~/.antigen.log"
+# ANTIGEN_LOG="~/.antigen.log"
 
 source ~/antigen.zsh
 
