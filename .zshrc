@@ -36,8 +36,8 @@ export PATH=$PATH:/usr/bin
 export PATH=$PATH:/bin
 
 # export PATH=$PATH:$HOME/miniconda/bin/
-
-zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
 SPACESHIP_USER_SHOW=false
@@ -88,6 +88,10 @@ bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+
+# select one word in paths
+autoload -U select-word-style
+select-word-style bash
 
 # history search
 #bindkey '^[[A' history-substring-search-up
