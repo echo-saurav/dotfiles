@@ -50,6 +50,7 @@ alias rm="rm -i"
 alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
+alias htop="bashtop"
 
 
 ## dir and file alias
