@@ -25,6 +25,7 @@ antigen apply
 
 
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.docker/bin
@@ -47,10 +48,12 @@ SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
 alias rm="rm -i"
+#alias vim="nvim"
 alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
 alias htop="bashtop"
+alias top="htop"
 
 
 ## dir and file alias
