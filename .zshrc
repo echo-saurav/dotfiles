@@ -25,7 +25,6 @@ antigen apply
 
 
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.docker/bin
@@ -48,12 +47,10 @@ SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
 alias rm="rm -i"
-#alias vim="nvim"
 alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
 alias htop="bashtop"
-alias top="htop"
 
 
 ## dir and file alias
@@ -65,7 +62,9 @@ alias top="htop"
 
 export VISUAL=lvim;
 export EDITOR=lvim;
-setopt incappendhistory
+# setopt incappendhistory
+# setopt APPEND_HISTORY
+setopt share_history # share command history data
 
 
 #calculator
@@ -139,4 +138,6 @@ abbrev-alias -g s="cd ~/storage/public/"
 
 
 
-
+# ollama 
+export OLLAMA_HOST="0.0.0.0"
+export OLLAMA_MODELS=~/.ollama/models
