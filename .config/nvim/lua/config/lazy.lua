@@ -17,7 +17,68 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
+      colorscheme = "gruvbox-material",
+    } },
+    -- add gruvbox
+    {
+      "sainnhe/gruvbox-material",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        -- vim.g.everforest_enable_italic = true
+        vim.g.gruvbox_material_background = "hard"
+        vim.g.gruvbox_material_enable_italic = 1
+        vim.g.airline_theme = "gruvbox_material"
+        vim.cmd.colorscheme("gruvbox-material")
+      end,
+    },
+    --- old way of doing , i use gruvbox_material
+    --- { "ellisonleao/gruvbox.nvim" },
+    -- supertab
+    {
+      "hrsh7th/nvim-cmp",
+      ---@param opts cmp.ConfigSchema
+      opts = function(_, opts)
+        local has_words_before = function()
+          unpack = unpack or table.unpack
+          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+          return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        end
+
+        local cmp = require("cmp")
+
+        opts.mapping = vim.tbl_extend("force", opts.mapping, {
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+              cmp.select_next_item()
+            elseif vim.snippet.active({ direction = 1 }) then
+              vim.schedule(function()
+                vim.snippet.jump(1)
+              end)
+            elseif has_words_before() then
+              cmp.complete()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif vim.snippet.active({ direction = -1 }) then
+              vim.schedule(function()
+                vim.snippet.jump(-1)
+              end)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        })
+      end,
+    },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -30,7 +91,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "gruvbox", "habamax" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
