@@ -48,8 +48,8 @@ SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
 alias rm="rm -i"
-#alias vim="nvim"
-alias vim="lvim"
+alias vim="nvim"
+# alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
 alias htop="bashtop"
