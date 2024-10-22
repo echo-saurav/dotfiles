@@ -63,8 +63,10 @@ alias top="htop"
 # alias -g s="~/storage/public/"
 
 
-export VISUAL=lvim;
-export EDITOR=lvim;
+export VISUAL=nvim;
+export EDITOR=nvim;
+#export VISUAL=lvim;
+#export EDITOR=lvim;
 # setopt incappendhistory
 # setopt APPEND_HISTORY
 setopt share_history # share command history data
@@ -144,3 +146,4 @@ abbrev-alias -g s="cd ~/storage/public/"
 # ollama 
 export OLLAMA_HOST="0.0.0.0"
 export OLLAMA_MODELS=~/.ollama/models
+. "/Users/sauravahmed/.deno/env"
