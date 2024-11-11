@@ -151,9 +151,11 @@ export OLLAMA_MODELS=~/.ollama/models
 # for mac
 if [[ $(uname) == "Darwin" ]]; then
     . "/Users/sauravahmed/.deno/env"
-    echo "From a MacOS environment!"
+    echo "From a macOS environment!"
 
 # for linux
-if [[ $(uname) == "Linux" ]]; then
+elif [[ $(uname) == "Linux" ]]; then
     echo "From a Linux environment!"
+fi
+
 
