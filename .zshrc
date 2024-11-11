@@ -129,9 +129,8 @@ zle -N sudo-command-line
 bindkey "\e\e\e" sudo-command-line
 
 
-abbrev-alias -g com="cd ~/docker/dockerCompose/"
-abbrev-alias -g h="cd ~/"
-abbrev-alias -g s="cd ~/storage/public/"
+abbrev-alias -g dok="cd ~/docker/compose/"
+
 #
 ## abbr 
 # abbr import-aliases 
@@ -146,4 +145,15 @@ abbrev-alias -g s="cd ~/storage/public/"
 # ollama 
 export OLLAMA_HOST="0.0.0.0"
 export OLLAMA_MODELS=~/.ollama/models
-. "/Users/sauravahmed/.deno/env"
+
+
+# What OS are we running?
+# for mac
+if [[ $(uname) == "Darwin" ]]; then
+    . "/Users/sauravahmed/.deno/env"
+    echo "From a MacOS environment!"
+
+# for linux
+if [[ $(uname) == "Linux" ]]; then
+    echo "From a Linux environment!"
+
