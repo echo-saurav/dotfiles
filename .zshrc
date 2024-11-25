@@ -11,7 +11,7 @@ source ~/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
+# antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
 antigen bundle Aloxaf/fzf-tab
 # antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle momo-lab/zsh-abbrev-alias
@@ -91,8 +91,9 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=false
 
 
-bindkey "^[^[[D" backward-word
-bindkey "^[^[[C" forward-word
+# check bind key using cat -v
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
@@ -152,6 +153,9 @@ export OLLAMA_MODELS=~/.ollama/models
 if [[ $(uname) == "Darwin" ]]; then
     . "/Users/sauravahmed/.deno/env"
     echo "From a macOS environment!"
+    # binding ollama to 0.0.0.0
+    launchctl setenv OLLAMA_HOST 0.0.0.0:11434
+
 
 # for linux
 elif [[ $(uname) == "Linux" ]]; then
