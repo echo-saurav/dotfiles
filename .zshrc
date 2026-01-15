@@ -52,8 +52,9 @@ alias vim="nvim"
 # alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
-alias htop="bashtop"
-alias top="htop"
+# alias htop="bashtop"
+# alias top="htop"
+alias css="cd ~/Documents/ObsidianVaults/Ram/.macbook/snippets/"
 
 
 ## dir and file alias
@@ -162,4 +163,9 @@ elif [[ $(uname) == "Linux" ]]; then
     echo "From a Linux environment!"
 fi
 
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sauravahmed/.cache/lm-studio/bin"
+# End of LM Studio CLI section
 
