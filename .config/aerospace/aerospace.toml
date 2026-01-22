@@ -133,6 +133,10 @@ run = 'move-node-to-workspace E'
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.shortcuts'
+run = 'layout floating'
+
 #[[on-window-detected]]
 #if.app-id = 'com.apple.systempreferences'
 #if.app-name-regex-substring = 'settings'
@@ -160,6 +164,8 @@ run = 'layout floating'
 # All possible modifiers: cmd, alt, ctrl, shift
 
 
+# show all window name
+# aerospace list-apps
 
 
 
