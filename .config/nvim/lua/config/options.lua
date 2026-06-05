@@ -4,3 +4,6 @@
 
 -- Append unnamedplus to the clipboard options
 vim.opt.clipboard:append("unnamedplus")
+-- Add these two lines here:
+vim.opt.wrap = true
+vim.opt.linebreak = true
