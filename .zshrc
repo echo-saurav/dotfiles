@@ -52,8 +52,8 @@ alias vim="nvim"
 # alias vim="lvim"
 alias r=". ranger"
 alias ls="ls --color"
-alias htop="bashtop"
-alias top="htop"
+# alias htop="bashtop"
+# alias top="htop"
 
 
 ## dir and file alias
