@@ -14,6 +14,7 @@ source ~/antigen.zsh
 
 antigen bundle zsh-users/zsh-completions
 antigen bundle Aloxaf/fzf-tab
+antigen bundle joshskidmore/zsh-fzf-history-search
 antigen bundle momo-lab/zsh-abbrev-alias
 antigen bundle MichaelAquilina/zsh-you-should-use
 
@@ -39,6 +40,11 @@ export PATH=$PATH:/bin
 
 # export PATH=$PATH:$HOME/miniconda/bin/
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# zsh tab config
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
@@ -47,6 +53,8 @@ SPACESHIP_GIT_STATUS_UNTRACKED=
 SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
+# zsh fzf history
+ZSH_FZF_HISTORY_SEARCH_BIND='^r'
 
 alias rm="rm -i"
 alias vim="nvim"
