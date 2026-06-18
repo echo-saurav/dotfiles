@@ -6,18 +6,20 @@
 # antigen config
 # ANTIGEN_LOG="~/.antigen.log"
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# plugins 
 source ~/antigen.zsh
+
+antigen bundle zsh-users/zsh-completions
+antigen bundle Aloxaf/fzf-tab
+antigen bundle joshskidmore/zsh-fzf-history-search
+antigen bundle momo-lab/zsh-abbrev-alias
+antigen bundle MichaelAquilina/zsh-you-should-use
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-# antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
-antigen bundle Aloxaf/fzf-tab
-# antigen bundle jeffreytse/zsh-vi-mode
-antigen bundle momo-lab/zsh-abbrev-alias
-antigen bundle MichaelAquilina/zsh-you-should-use
-# antigen bundle olets/zsh-abbr@main
-# antigen bundle zsh-users/zsh-history-substring-search
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
@@ -38,6 +40,11 @@ export PATH=$PATH:/bin
 
 # export PATH=$PATH:$HOME/miniconda/bin/
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# zsh tab config
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # zstyle ':completion:*' menu select
 # prompt config
 # https://spaceship-prompt.sh/
@@ -46,6 +53,8 @@ SPACESHIP_GIT_STATUS_UNTRACKED=
 SPACESHIP_GIT_STATUS_MODIFIED="m"
 
 
+# zsh fzf history
+ZSH_FZF_HISTORY_SEARCH_BIND='^r'
 
 alias rm="rm -i"
 alias vim="nvim"
