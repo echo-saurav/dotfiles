@@ -53,16 +53,16 @@ sketchybar --add item battery right \
 
 # Ram
 sketchybar --add item ram right \
-           --set ram update_freq=15 icon=󰍛 script="$PLUGIN_DIR/ram.sh"
+           --set ram update_freq=15 icon=/ram: script="$PLUGIN_DIR/ram.sh"
 
 # CPU
 sketchybar --add item cpu right \
-           --set cpu update_freq=15 icon=󰻠 script="$PLUGIN_DIR/cpu.sh"
+           --set cpu update_freq=15 icon=/cpu: script="$PLUGIN_DIR/cpu.sh"
 
 
 # Obsidian pomodoro
 sketchybar --add item pomodoro right \
-           --set pomodoro update_freq=5 icon=⏰ script="$PLUGIN_DIR/pomodoro.sh"
+           --set pomodoro update_freq=5 icon= script="$PLUGIN_DIR/pomodoro.sh"
 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
