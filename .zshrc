@@ -6,18 +6,19 @@
 # antigen config
 # ANTIGEN_LOG="~/.antigen.log"
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# plugins 
 source ~/antigen.zsh
+
+antigen bundle zsh-users/zsh-completions
+antigen bundle Aloxaf/fzf-tab
+antigen bundle momo-lab/zsh-abbrev-alias
+antigen bundle MichaelAquilina/zsh-you-should-use
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-# antigen bundle KulkarniKaustubh/fzf-dir-navigator@main
-antigen bundle Aloxaf/fzf-tab
-# antigen bundle jeffreytse/zsh-vi-mode
-antigen bundle momo-lab/zsh-abbrev-alias
-antigen bundle MichaelAquilina/zsh-you-should-use
-# antigen bundle olets/zsh-abbr@main
-# antigen bundle zsh-users/zsh-history-substring-search
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
