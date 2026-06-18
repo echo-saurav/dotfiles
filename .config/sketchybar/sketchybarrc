@@ -60,10 +60,6 @@ sketchybar --add item cpu right \
            --set cpu update_freq=15 icon=/cpu: script="$PLUGIN_DIR/cpu.sh"
 
 
-# Obsidian pomodoro
-sketchybar --add item pomodoro right \
-           --set pomodoro update_freq=5 icon= script="$PLUGIN_DIR/pomodoro.sh"
-
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
